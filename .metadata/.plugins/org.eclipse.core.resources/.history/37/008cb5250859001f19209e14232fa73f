@@ -1,0 +1,12 @@
+package dto;
+
+public class CandidateArtist {
+	private int num;
+	private String candidateName;
+	private String candidatePhone;
+	private String candidateEmail;
+	private String candidateProfile;
+	private String candidateCareer;
+	private String priceConfirmation;
+	private String candidateCreatedAt;
+}

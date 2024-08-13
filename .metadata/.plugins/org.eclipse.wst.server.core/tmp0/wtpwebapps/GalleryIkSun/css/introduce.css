@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color:inherit;
+    display: block;
+  }
+
+  body {
+    width: 100%;
+  }
+/*헤더*/
+header{
+    height: 130px;
+    width: 100%;
+    position: relative;
+    z-index: 30;
+}
+header h1{
+    padding-top: 40px;
+    padding-left: 20px;
+    z-index: 30;
+}
+nav{
+    position: absolute;
+    top: 80px;
+    right:10px;
+    z-index: 10;
+}
+nav> ul{
+    display: flex;
+}
+nav>ul>li>a{
+    width: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #6cc;
+    text-align: center;
+    padding: 10px;
+}
+nav>ul>li:hover>a{
+    background: #333;
+}
+.sub{
+    display: none;
+}
+.sub>li>a{
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ddd;
+    text-align: center;
+    padding: 10px;
+}
+.sub>li:hover>a{
+    background: #333;
+}
+.bg{
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    width: 600px;
+    height: 200px;
+    background: #fff;
+    z-index: -10;
+    display: none;
+}
+
+/*회원가입, 로그인 부분*/
+.right{
+    position: absolute;
+    top:0;
+    right: 10px;
+    padding: 5px;
+}
+.right a{
+    display: inline;
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+.right a:first-child::after{
+    content: '|';
+    position: relative;
+    top: -2px;
+    left: 13px;
+    font-size: 12px;
+}
+
+  .txt {
+    float: left;
+    background-attachment: fixed;
+  }
+
+  .contents {
+    width: 100%;
+    margin-top: 90px;
+    position: relative;
+
+  }
+
+  .contents div {
+    width: 100%;
+    height: 630px;
+    padding: 100 20;
+    overflow: hidden;
+  }
+
+
+
+  .contents .cont1 {
+    background: url(../img/image_01.jpg) no-repeat left top;
+    background-size: 40%;
+    position: relative;
+  }
+
+  .cont1 .txt {
+
+    width: 50%;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+  }
+
+
+  .contents .cont2 {
+    background: url(../img/image_02.jpg) no-repeat right center;
+    background-size: 40%;
+    position: relative;
+  }
+
+  .cont2 .txt {
+
+    width: 50%;
+    position: absolute;
+    top: 50px;
+    left: 20px;
+    text-align: right;
+  }
+
+  .contents .cont3 {
+    background: url(../img/image_01.jpg) no-repeat left top;
+    background-size: 40%;
+    position: relative;
+    padding: 150px 20px 100px 40%;
+  }
+
+  .cont3 .txt {
+
+    width: 50%;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+  }
+
+  .txt h1{
+    display: inline-block;
+  }
+
+  .txt h1::after {
+    content: "";
+    display: block;
+    background-color: #000;
+    width: 1px;
+    height: 50px;
+    margin: 30px 20px;
+     
+  }
+
+  
+  .cont2 h1::after {
+    content: "";
+     
+    background-color: #000;
+    width: 1px;
+    height: 50px;
+    margin: 30px 20px;
+     
+  }
+
+ .txt h2 {
+    color: #a67c52;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+  }
+
+ .txt p {
+    line-height: 1.5em;
+  }

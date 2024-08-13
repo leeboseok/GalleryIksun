@@ -1,0 +1,11 @@
+package dto;
+
+public class Shipping {
+	private int num;
+	private int shippingNum;
+	private String shippingAddress;
+	private String trackingNumber;
+	private String shippingStatus;
+	private String shippingCompany;
+	
+}

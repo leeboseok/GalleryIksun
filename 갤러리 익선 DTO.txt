@@ -1,0 +1,127 @@
+//작가
+public class Artist {
+	private int num;
+	private String artistName; // 작가 이름
+	private String artistPhone; // 작가 전화번호
+	private String artistEmail; // 작가 이메일
+	private String artistAddress; // 작가 주소
+	private String artistCreatedAt; // 작가 등록 시간
+}
+
+//게시판
+public class Board {
+	private int num;
+	private String boardTitle; // 게시판 글 제목
+	private String boardContent; // 게시판 글
+	private String boardAuthor; // 게시판 글 작성자
+	private String boardCreatedAt; // 게시판 글 등록 시간
+	private int boardView; // 게시판 글 조회수
+}
+
+//작가 등록 신청자
+public class CandidateArtist {
+	private int num;
+	private String candidateName; // 작가 등록 신청자 이름
+	private String candidatePhone; // 작가 등록 신청자 전화번호
+	private String candidateEmail; // 작가 등록 신청자 이메일
+	private String candidateProfile; // 작가 등록 신청자 파일 (file로 받음)
+	private String candidateCareer; // 작가 등록 신청자 커리어 (file로 받음)
+	private String priceConfirmation; // 가격 협상 동의서 ( file로 받음, 서식필요)
+	private String candidateCreatedAt; // 작가 등록 신청자 데이터베이스 등록 시간
+}
+
+//탈퇴 회원 정보
+public class DeletedMember {
+	private int num;
+	private String deletedName; // 탈퇴 회원 이름
+	private String deletedId; // 탈퇴 회원 아이디
+	private String deletedEmail; // 탈퇴 회원 이메일
+	private String deletedPhone; // 탈퇴 회원 전화번호
+	private String deletedAddress; // 탈퇴 회원 주소
+	private String deletedAddress2; // 탈퇴 회원 상세주소
+	private String deletedPost; // 탈퇴 회원 우편번호
+	private String deletedBank; // 탈퇴 회원 은행
+	private String deletedAccountNumber; // 탈퇴 회원 계좌번호
+	private String deletedAccountHandler; // 탈퇴 회원 계좌번호 예금주
+	private String deletedUserType; // 탈퇴 회원 회원 등급 
+	private String deletedAt; // 탈퇴 시간
+	private String deletedReason; // 탈퇴 이유
+}
+
+//회원 정보
+public class Member{
+	private String num; 
+	private String name; // 회원 이름
+	private String id; // 회원 아이디
+	private String pw; // 회원 비밀번호
+	private String birth; // 회원 생년월일
+	private String phone; // 회원 전화번호
+	private String email; // 회원 이메일
+	private String post; //우편번호 
+	private String address; // 회원 주소
+	private String addressDetail; // 회원 
+	private String bank; // 회원 은행
+	private String accountNumber; // 회원 계좌번호
+	private String accountHandler; // 회원 계좌 예금주
+	private String userType; // 회원 등급 ( admin, member)
+	private String createdAt; // 회원 가입 시간
+	private String status; // 회원 탈퇴 여부 (번호 부여/ 일반회원일 때 번호 0, 탈퇴 회원 번호 1)
+}
+
+// 주문 내역
+public class Ordered {
+	private int orderedNum;
+	private int orderedProductNum; // 주문 상품 번호
+	private String orderedProductQty; // 주문 수량
+	private String ordererName; // 주문자 이름
+	private String ordererPhone; // 주문자 전화번호
+	private String ordererEmail; // 주문자 이메일
+	private String recipientName; // 수령인 이름
+	private String recipientAddress; // 수령 주소
+	private String recipientPhone; // 수령인 전화번호
+	private String recipientEmail; // 수령인 이메일
+	private String orderedRequest; // 배송요청사항
+	private String orderedAt; // 주문 일시
+	private String status; // 결제 완료 여부 ( 번호 부여/ 결제 대기중=0, 결제 완료=1, 결제 취소=0 )
+}
+
+// 결제 내역
+public class PaidDetail {
+	private int num;
+	private int paidProduct; // 결제 상품(상품 번호) foreign key (paidProduct) references (product) num;
+	private int paidProductQty; // 결제 상품 수량
+	private BigDecimal paidAmount; // 결제한 총 금액
+	private String ordererName; // 주문자 이름
+	private String paidMethod; // 결제 수단
+	private String paidAt; // 결제 시간
+	private String paidStatus; // 결제 상태( 번호 부여/ 결제 완료=1, 결제 취소=2 )
+}
+
+public class Product {
+	private int num;
+	private String productTitle; // 상품 이름
+	private String productAuthor; // 작가 이름
+	private String productPicture; // 상품 사진
+	private String productPrice; // 상품 가격
+	private String productDescription; // 상품 설명
+	private String productGenre; // 상품 장르 (번호 부여 / 동양화=0, 서양화=1)
+	private String productStatus; // 판매 상태 (번호 부여 / 판매중=0, 판매완료=1)
+	private String productCreatedAt; // 상품 등록 시간
+}
+
+public class Shipping {
+	private int num;
+	private int shippingNum;// 배송번호
+	private String trackingNumber; // 운송장 번호
+	private String shippingCompany; // 배송 회사
+}
+
+public class Wishlist {
+	private int num;
+	private String wishlistId; 		// 아이디 ( 세션으로 회원등급을 받음 마크업 필요 없음)
+	private int wishlistProductNum;		// 상품 번호
+	private String wishlistProductTitle;	// 상품 제목
+	private String wishlistProductPrice;	// 상품 가격
+	private String wishlistproductStatus; 	// 판매 상태 (번호 부여 / 판매중=0, 판매완료=1)
+	private String wishlistMemberName; 	// 장바구니 
+}

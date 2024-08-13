@@ -1,0 +1,18 @@
+package dto;
+
+public class DeletedMember {
+	private int num;
+	private String deletedName;
+	private String deletedId;
+	private String deletedEmail;
+	private String deletedPhone;
+	private String deletedAddress;
+	private String deletedAddress2;
+	private String deletedPost;
+	private String deletedBank;
+	private String deletedAccountNumber;
+	private String deletedAccountHandler;
+	private String deletedUserType;
+	private String deletedAt;
+	private String deletedReason;
+}

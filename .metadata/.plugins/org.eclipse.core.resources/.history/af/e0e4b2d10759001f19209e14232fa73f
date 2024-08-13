@@ -1,0 +1,16 @@
+package dto;
+
+public class Ordered {
+	private int orderedNum;
+	private int orderedProductNum;
+	private String orderedProductQty;
+	private String ordererName;
+	private String ordererPhone;
+	private String ordererEmail;
+	private String recipientName;
+	private String recipientAddress;
+	private String recipientPhone;
+	private String recipientEmail;
+	private String orderedRequest;
+	private String orderedAt;
+}

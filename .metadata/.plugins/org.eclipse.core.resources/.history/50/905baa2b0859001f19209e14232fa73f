@@ -1,0 +1,10 @@
+package dto;
+
+public class Board {
+	private int num;
+	private String boardTitle;
+	private String boardContent;
+	private String boardAuthor;
+	private String boardCreatedAt;
+	private int boardView;
+}

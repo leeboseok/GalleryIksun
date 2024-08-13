@@ -1,0 +1,14 @@
+package dto;
+
+import java.math.BigDecimal;
+
+public class PaidDetail {
+	private int num;
+	private int paidProduct;
+	private int paidProductQty;
+	private BigDecimal paidAmount;
+	private String ordererName;
+	private String paidMethod;
+	private String paidAt;
+	private String paidStatus;
+}

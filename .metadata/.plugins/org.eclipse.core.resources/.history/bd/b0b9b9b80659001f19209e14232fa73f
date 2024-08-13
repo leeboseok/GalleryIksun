@@ -1,0 +1,274 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>작가 소개</title>
+<script src="script/jquery-3.7.0.min.js"></script>
+<script src="script/header.js"></script>
+<link rel="stylesheet" href="css/introduceArtists.css">
+ 
+</head>
+<body>
+<header>
+    <h1><a href="#"><img src="img/header.png" alt="갤러리익선"></a></h1>
+    <nav>
+        <ul>
+            <li><a href="#">Gallery</a>
+                <ul class="sub">
+                    <li><a href="introduce.jsp">Gallery Iksun 소개</a></li>
+                    <li><a href="introduceArtists.jsp">작가별 보기</a></li>
+                    <li><a href="thema.jsp">테마별 보기</a></li>
+                </ul>
+            </li>
+            <li><a href="shop.jsp">미술품 구매</a>
+                <ul class="sub">
+                    <li><a href="shop.jsp">원화 구입</a></li>
+                    <li><a href="wishlist.jsp">장바구니</a></li>
+                </ul>
+            </li>
+            <li><a href="community.jsp">커뮤니티</a>
+                <!-- <ul class="sub">
+                    <li><a href="community.jsp">게시판</a></li>
+                </ul> -->
+            </li>
+            <li><a href="mypage.jsp">마이페이지</a>
+                <ul class="sub">
+                    <li><a href="myorder.jsp">주문확인</a></li>
+                    <li><a href="mypage.jsp">개인정보확인</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="right">
+        <a href="signIn.jsp">로그인</a>
+        <a href="signUp.jsp">회원가입</a>
+    </div>
+    <div class="h_bg"></div>
+</header>
+<div id="wrap">
+    <h1>작가 소개</h1>
+    <div class="contents">
+        <ul>
+            <li>
+                <div class="box">
+                  
+                    <div class="f_img"><a href="writer01.jsp"><img src="img/artist_jks.jpg" alt="조경심"></a></div>
+
+                    <div class="txt">
+                        <h3>소정 조경심</h3>
+                    </div>
+                    <div class="info">
+                        <p>개인전 10회</p>
+                        <p>(사)한국미술협회 문인화분과 부이사장</p>
+                        <p>(사)한국미술협회 초대작가</p>
+                        <p>대한민국미술대전 운영, 심사위원 역임</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="writer02.jsp"><img src="img/artist_shs.jpg" alt="서혜숙"></a></div>
+                    <div class="txt">
+                        <h3>운정 서혜숙</h3>
+                    </div>
+                    <div class="info">
+                        <p>개인전 1회, 회원전 다수</p>
+                        <p>대한민국미술대전 문인화부문 초대작가</p>
+                        <p>(사)한국미술협회 문인화분과 이사</p>
+                        <p>대한민국경기미술대전, 명인미술대전, 서예문인화대전 심사위원 역임</p>                 
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="writer03.jsp"><img src="img/artist_phj.jpg" alt="박호자"></a></div>
+
+                    <div class="txt">
+                        <h3>혜진 박호자</h3>
+                    </div>
+                    <div class="info">
+                        <p>대한민국미술대전 문인화부문 우수상, 초대작가</p>
+                        <p>경기미술문인화대전 우수상, 초대작가</p>
+                        <p>성남전통미술대전 대상, 초대작가</p>
+                        <p>한국예술문화원 문체부장관상, 초대작가</p>
+                        <p>경기미술문인화대전 2차 심사위원 역임</p>
+                        </div>
+                    <div class="bg" style="background-image: url(img/image_02.jpg);"> </div>
+                </div>
+            </li>
+
+             <li>
+                <div class="box">
+                    <div class="f_img"><a href="writer04.jsp"><img src="img/artist_pjw.jpg" alt="박중욱"></a></div>
+
+                    <div class="txt">
+                        <h3>효천 박중욱</h3>
+                    </div>
+                    <div class="info">
+                        <p>대한민국미술대전 문인화부문 초대작가</p>
+                        <p>경기미술문인화대전 초대작가</p>
+                        <p>한국예술문화원 초대작가(서울시장상, 최우수상)</p>
+                        <p>한국미술협회 문인화 분과위원</p>
+                        <p>한국예술문화원 심사위원</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li>  
+
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="writer05.jsp"><img src="img/artist_ksh.jpg" alt="권상학"></a></div>
+                    <div class="txt">
+                        <h3>와석 권상학</h3>
+                    </div>
+                    <div class="info">
+                        <p>(사)한국미술협회 문인화부문 초대작가</p>
+                        <p>한국예술문화원 초대작가</p>
+                        <p>광화문광장 휘호대회 대상</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_02.jpg);"> </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="writer06.jsp"><img src="img/artist_jkh.jpg" alt="정경화"></a></div>
+                    <div class="txt">
+                        <h3>소윤 정경화</h3>
+                    </div>
+                    <div class="info">
+                        <p>대한민국서예문인화대전 초대작가</p>
+                        <p>대한민국통일명인미술대전 초대작가</p>
+                        <p>대한민국경기미술대전 우수상</p>
+                        <p>광화문광장휘호대회 문체부장관상</p>
+                        <p>대한민국미술대전 특선</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="#"><img src="img/artist_jya.jpg" alt="주영애"></a></div>
+                    <div class="txt">
+                        <h3>소연 주영애</h3>
+                    </div>
+                    <div class="info">
+                        <p>대한민국서예문인화대전 초대작가</p>
+                        <p>대한민국통일명인미술대전 초대작가</p>
+                        <p>대한민국경기미술대전 입선, 특선</p>
+                        <p>광화문광장휘호대회 문체부장관상</p>
+                        <p>대한민국미술대전 입선, 특선</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li>
+            
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="#"><img src="img/artist_neh.jpg" alt="노은희"></a></div>
+                    <div class="txt">
+                        <h3>소담 노은희</h3>
+                    </div>
+                    <div class="info">
+                        <p>통일명인미술대전 초대작가</p>
+                        <p>대한민국서예문인화대전 초대작가(우수상)</p>
+                        <p>경기미술문인화대전 특선</p>
+                        <p>대한민국미술대전 문인화부문 입선</p>
+                        <p>광화문광장휘호대회 한글학회장상</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li>
+            
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="#"><img src="img/artist_kyj.jpg" alt="김용재"></a></div>
+                    <div class="txt">
+                        <h3>온일 김용재</h3>
+                    </div>
+                    <div class="info">
+                        <p>문인화정신전 출품</p>
+                        <p>통일명인미술대전 초대작가</p>
+                        <p>서예문인화대전 삼체상</p>
+                        <p>경기미술문인화대전 특선</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li>
+           
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="#"><img src="img/artist_khn.jpg" alt="김해니"></a></div>
+                    <div class="txt">
+                        <h3>해니 김해니</h3>
+                    </div>
+                    <div class="info">
+                        <p>문인화정신전 출품</p>
+                        <p>통일명인미술대전 삼체상</p>
+                        <p>서예문인화대전 삼체상</p>
+                        <p>경기미술문인화대전 입선</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li>
+            
+
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="#"><img src=" " alt="최지향"></a></div>
+                    <div class="txt">
+                        <h3>지향 최지향</h3>
+                    </div>
+                    <div class="info">
+                        <p>문인화정신전 출품</p>
+                        <p>통일명인미술대전 삼체상</p>
+                        <p>서예문인화대전 삼체상</p>
+                        <p>경기미술문인화대전 입선</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="box">
+                    <div class="f_img"><a href="#"><img src=" " alt="이보석"></a></div>
+                    <div class="txt">
+                        <h3>보석 이보석</h3>
+                    </div>
+                    <div class="info">
+                        <p>문인화정신전 출품</p>
+                        <p>통일명인미술대전 삼체상</p>
+                        <p>서예문인화대전 삼체상</p>
+                        <p>경기미술문인화대전 입선</p>
+                    </div>
+                    <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
+                </div>
+            </li> -->
+
+        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div><!-- .contents -->
+</div> <!-- #wrap -->
+
+<footer>
+	<jsp:include page="footer.jsp"></jsp:include>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+package dto;
+
+public class Wishlist {
+	private int num;
+	private int wishlistProductNum;
+	private String wishlistProductQty;
+	private String wishlistMemberName;
+}
