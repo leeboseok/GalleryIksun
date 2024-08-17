@@ -28,8 +28,8 @@
 			<c:forEach items="${productlist }" var="product">
 				<tr>
 					<td>${product.getNum() }</td>
-					<td>${product.getName() }</td>
-					<td>${product.getPrice() }원</td>
+					<td>${product.getProductTitle() }</td>
+					<td>${product.getProductPrice() }원</td>
 					<td><a href="productUpdate?num=${product.getNum() }">상품 수정</a></td>
 					<td><a href="productDelete?num=${product.getNum() }">상품 삭제</a></td>
 				</tr>

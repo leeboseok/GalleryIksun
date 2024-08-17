@@ -1,0 +1,120 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<div id="wrap">
+			<form method="post" action="signUp" name="frm">
+	            <h2>사이트 이용정보 입력</h2>
+	            <div>
+	                <div>ID:</div>
+	                <input type="text" name="id" placeholder="id를 입력하세요.">
+	                <input type="hidden" name="reId">
+	                <input type="button" value="중복확인" onclick="idCheck()">
+	            </div>
+	            <div>
+	                <div>비밀번호:</div>
+	                <input type="password" name="pw" placeholder="비밀번호">
+	            </div>
+	            <div>
+	                <div>비밀번호확인:</div>
+	                <input type="password" name="pw_confirm" placeholder="비밀번호확인">*
+	            </div>
+	            <h2>개인정보입력(필수)</h2>
+	            <div>
+	                <div>이름:</div>
+	                <input type="text" name="name" placeholder="이름">
+	            </div>
+	            
+	            <div>
+	                <div>생년월일 여섯자리:</div>
+	                <input type="text" name="birth" placeholder="ex)881231">
+	            </div>
+	            
+	            <div>
+	                <div>휴대폰번호:</div>
+	                <input type="text" name="phone" placeholder="휴대폰번호">
+	            </div>
+	            
+	            <div>
+	                <div>E-mail:</div>
+	                <input type="email" name="email" placeholder="E-mail">
+	            </div>
+	            <div>
+	                <div>우편번호:</div>
+	                <input type="text" name="post" placeholder="우편번호">
+	            </div>
+	            
+	            <div>
+	                <div>주소:</div>
+	                <input type="text" name="address" placeholder="주소">
+	            </div>
+	            
+	            <div>
+	                <div>참고항목:</div>
+	                <input type="text" name="postscript" placeholder="참고항목">
+	            </div>
+	            
+	            <div>
+	                <div>상세주소:</div>
+	                <input type="text" name="addressDetail" placeholder="상세주소">
+	            </div>
+	            <h2>추가정보(선택)</h2>
+	            <div>
+	                <div>은행:</div>
+	                <select name="bank">
+	                    <option value="산업은행">산업은행</option>
+	                    <option value="기업은행">기업은행</option>
+	                    <option value="수협">수협</option>
+	                    <option value="NH농협은행">NH농협은행</option>
+	                    <option value="한국수출입은행">한국수출입은행</option>
+	                    <option value="국민은행">국민은행</option>
+	                    <option value="신한은행">신한은행</option>
+	                    <option value="우리은행">우리은행</option>
+	                    <option value="SC제일은행">SC제일은행</option>
+	                    <option value="한국씨티은행">한국씨티은행</option>
+	                    <option value="하나은행">하나은행</option>
+	                    <option value="카카오뱅크">카카오뱅크</option>
+	                    <option value="토스뱅크">토스뱅크</option>
+	                    <option value="Standard Chartered">Standard Chartered</option>
+	                </select>
+	            </div>
+	            <div>
+	                <div>계좌번호:</div>
+	                <input type="text" name="accountnumber" placeholder="계좌번호">
+	            </div>
+	            <div>
+	                <div>예금주:</div>
+	                <input type="text" name="accountholder" placeholder="예금주">
+	            </div>
+	            <div>
+	                <div>생년월일:</div>
+	                <input type="text" name="birth" placeholder="생년월일(예시:830212)">
+	            </div>
+	            <div>
+	            	<div>회원종류:</div>
+	            	<input type="radio" name="user_type" value="admin">관리자
+	            	<input type="radio" name="user_type" value="member">일반회원
+	            </div>
+	            <input type="submit" name="action" value="Cancel">
+	            <input type="submit" name="action" value="Sign up!">
+	        </form>
+	       </div>
+	       <script>
+	       		function idCheck(){
+	       			if(document.frm.id.value==""){
+	       				alert("아이디를 입력하세요.");
+	       				document.frm.id.focus();
+	       			}
+	       			var url="idCheck.do?id="+document.frm.id.value;
+	       			var popupX=(window.screen.width/2) - (450/2);
+	       			var popupY=(window.screen.height/2) - (200/2);
+	       			window.open(url, "_blank_1", "toolbar=no, menubar=no, width=450, height=200, left="+popupX+", top="+popupY);
+	       		}
+	       </script>
+	</body>
+</html>

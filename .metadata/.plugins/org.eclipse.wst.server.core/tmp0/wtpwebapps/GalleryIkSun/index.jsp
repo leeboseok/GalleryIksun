@@ -11,6 +11,9 @@
     <script src="script/index.js"></script>
 </head>
 <body>
+	<%
+		String userType=(String)session.getAttribute("userType");
+	%>
     <div id="wrap">
         <div id="main">
             <div class="page1">
@@ -18,11 +21,17 @@
                     <h1><a href="index.jsp"><img src="img/header.png" alt="갤러리익선"></a></h1>
                     <nav>
                         <ul>
-                            <li><a href="#">Gallery</a>
+                        <%
+                        	if(userType!=null&&userType.equals("admin")){
+                        		%>
+                        			<li><a href="productList">상품관리</a></li>
+                        		<%
+                        	}
+                        %>
+                            <li><a href="introduce.jsp">Gallery</a>
                                 <ul class="sub">
                                     <li><a href="introduce.jsp">Gallery Iksun 소개</a></li>
                                     <li><a href="introduceArtists.jsp">작가별 보기</a></li>
-                              <!--  <li><a href="thema.jsp">테마별 보기</a></li>  -->
                                 </ul>
                             </li>
                             <li><a href="shop.jsp">미술품 구매</a>
@@ -31,11 +40,7 @@
                                     <li><a href="wishlist.jsp">장바구니</a></li>
                                 </ul>
                             </li>
-                            <li><a href="community.jsp">커뮤니티</a>
-                                <!-- <ul class="sub">
-                                    <li><a href="community.jsp">게시판</a></li>
-                                </ul> -->
-                            </li>
+                            <li><a href="boardList">커뮤니티</a></li>
                             <li><a href="mypage.jsp">마이페이지</a>
                                 <ul class="sub">
                                     <li><a href="myorder.jsp">주문확인</a></li>
@@ -45,8 +50,17 @@
                         </ul>
                     </nav>
                     <div class="right">
-                        <a href="signIn.jsp">로그인</a>
-                        <a href="signUp.jsp">회원가입</a>
+                       <%
+                       	if(userType!=null){
+                       		
+                       	}else{
+                       		%>
+                       			<a href="login">로그인</a>
+                            	<a href="signUp.jsp">회원가입</a>
+                       		<%
+                       	}
+                       %>
+                        	
                     </div>
                     <div class="bg"></div>
                 </header>

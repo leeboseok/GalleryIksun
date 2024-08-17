@@ -1,11 +1,12 @@
 package dao;
 
-import java.sql.*; 
+import java.sql.*;   
 import java.util.*;
 
 import dto.Product;
 
 public class ProductDAO {
+	
    private ProductDAO() {
       
    }
@@ -59,13 +60,14 @@ public class ProductDAO {
          while(rs.next()) {
             Product p=new Product();
             p.setNum(rs.getInt("num"));
-            p.setProductTitle(rs.getString("productTitle"));
-            p.setProductAuthor(rs.getString("productAuthor"));
-            p.setProductPicture(rs.getString("productPicture"));
-            p.setProductPrice(rs.getInt("productPrice"));
-            p.setProductDescription(rs.getString("productDescription"));
-            p.setProductGenre(rs.getString("productGenre"));
-            p.setProductCreatedAt(rs.getString("productCreatedAt"));
+            p.setProductTitle(rs.getString("product_title"));
+            p.setProductAuthor(rs.getString("product_author"));
+            p.setProductPicture(rs.getString("product_picture"));
+            p.setProductPrice(rs.getInt("product_price"));
+            p.setProductDescription(rs.getString("product_description"));
+            p.setProductGenre(rs.getString("product_genre"));
+            p.setProductCreatedAt(rs.getString("product_created_at"));
+            list.add(p);
          }
       }catch(Exception e) {
          System.out.println("List<Product> 실행 중 오류 발생 : "+e);
@@ -96,6 +98,7 @@ public class ProductDAO {
 		   pstmt.setString(5, p.getProductDescription());
 		   pstmt.setString(6, p.getProductGenre());
 		   pstmt.setString(7, p.getProductStatus());
+		   pstmt.executeUpdate();
 	   }catch(Exception e) {
 		   System.out.println("insertProduct(Product) 실행 중 오류 발생 : "+e);
 	   }finally {
@@ -118,16 +121,18 @@ public class ProductDAO {
 		try {
 			conn=getConnection();
 			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, num);
 			rs=pstmt.executeQuery();
 			if(rs.next()) {
 				dto=new Product();
 				dto.setNum(rs.getInt("num"));
-				dto.setProductTitle(rs.getString("productTitle"));
-				dto.setProductAuthor(rs.getString("productAuthor"));
-				dto.setProductPicture(rs.getString("productPicture"));
-				dto.setProductDescription(rs.getString("productDescription"));
-				dto.setProductGenre(rs.getString("productGenre"));
-				dto.setProductStatus(rs.getString("productStatus"));
+				dto.setProductTitle(rs.getString("product_title"));
+				dto.setProductAuthor(rs.getString("product_author"));
+				dto.setProductPicture(rs.getString("product_picture"));
+				dto.setProductPrice(rs.getInt("product_price"));
+				dto.setProductDescription(rs.getString("product_description"));
+				dto.setProductGenre(rs.getString("product_genre"));
+				dto.setProductStatus(rs.getString("product_status"));
 			}
 		}catch(Exception e) {
 			System.out.println("selectProductByNum (num) 실행 중 오류 발생 : "+e);

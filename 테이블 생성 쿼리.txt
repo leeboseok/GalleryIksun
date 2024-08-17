@@ -1,0 +1,120 @@
+create table artist (
+    num int auto_increment primary key,
+    artist_name varchar(100) not null,
+    artist_phone varchar(20),
+    artist_email varchar(100),
+    artist_address text,
+    artist_created_at timestamp default current_timestamp
+);
+
+create table board (
+    num int auto_increment primary key,
+    board_title varchar(255) not null,
+    board_content text not null,
+    board_author varchar(100),
+    board_created_at timestamp default current_timestamp,
+    board_view int default 0
+);
+
+create table candidate_artist (
+    num int auto_increment primary key,
+    candidate_name varchar(100) not null,
+    candidate_phone varchar(20),
+    candidate_email varchar(100),
+    candidate_profile varchar(255),
+    candidate_career varchar(255),
+    price_confirmation varchar(255),
+    candidate_created_at timestamp default current_timestamp
+);
+
+create table deleted_member (
+    num int auto_increment primary key,
+    deleted_name varchar(100),
+    deleted_id varchar(50),
+    deleted_email varchar(100),
+    deleted_phone varchar(20),
+    deleted_address text,
+    deleted_address2 text,
+    deleted_post varchar(10),
+    deleted_bank varchar(50),
+    deleted_account_number varchar(50),
+    deleted_account_handler varchar(100),
+    deleted_user_type varchar(20),
+    deleted_at timestamp default current_timestamp,
+    deleted_reason text
+);
+
+create table member (
+    num int auto_increment primary key,
+    name varchar(100) not null,
+    id varchar(50) unique not null,
+    pw varchar(255) not null,
+    birth date,
+    phone varchar(20),
+    email varchar(100),
+    post varchar(10),
+    address text,
+    address_detail text,
+    bank varchar(50),
+    account_number varchar(50),
+    account_handler varchar(100),
+    user_type varchar(20),
+    created_at timestamp default current_timestamp,
+    status int default 0
+);
+
+create table ordered (
+    ordered_num int auto_increment primary key,
+    ordered_product_num int not null,
+    ordered_product_qty int not null,
+    orderer_name varchar(100),
+    orderer_phone varchar(20),
+    orderer_email varchar(100),
+    recipient_name varchar(100),
+    recipient_address text,
+    recipient_phone varchar(20),
+    recipient_email varchar(100),
+    ordered_request text,
+    ordered_at timestamp default current_timestamp,
+    status int default 0
+);
+
+create table paid_detail (
+    num int auto_increment primary key,
+    paid_product int,
+    paid_product_qty int,
+    paid_amount int, -- price는 now integer type로 변경됨
+    orderer_name varchar(100),
+    paid_method varchar(50),
+    paid_at timestamp default current_timestamp,
+    paid_status int default 1
+);
+
+create table product (
+    num int auto_increment primary key,
+    product_title varchar(255) not null,
+    product_author varchar(100),
+    product_picture blob,
+    product_price int, 
+    product_description text,
+    product_genre int,
+    product_status int,
+    product_created_at timestamp default current_timestamp
+);
+
+create table shipping (
+    num int auto_increment primary key,
+    shipping_num int not null,
+    tracking_number varchar(50),
+    shipping_company varchar(100)
+);
+
+create table wishlist (
+    num int auto_increment primary key,
+    wishlist_id varchar(50),
+    wishlist_product_num int not null,
+    wishlist_product_title varchar(255),
+    wishlist_product_price int, -- price는 now integer type로 변경됨
+    wishlist_product_status int,
+    wishlist_member_name varchar(100)
+);

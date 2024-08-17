@@ -8,7 +8,7 @@
 		<head>
 		<meta charset="UTF-8">
 	<title>상품 삭제 - 관리자</title>
-    <link rel="stylesheet" href="css/productsDelete.css">
+    <link rel="stylesheet" href="css/productDelete.css">
     <script src="script/jquery-3.7.0.min.js"></script>
     <script src="script/header.js"></script>
 	</head>
@@ -51,31 +51,31 @@
         </header>
 		<div id="wrap">
 			<h1>상품 삭제 - 관리자</h1>
-			<form method="post" name="frm" action="productsDelete">
+			<form method="post" name="frm" action="productDelete">
 				<input type="hidden" name="num" value="${product.getNum() }">
-				<input type="hidden" name="nomakeImg" value="${product.getPicture() }">
+				<input type="hidden" name="nomakeImg" value="${product.getProductPicture() }">
                 <div class="pic">
                     <c:choose>
-                        <c:when test="${product.getPicture()=='/files/null' }">
+                        <c:when test="${product.getProductPicture()=='/files/null' }">
                             이미지가 없습니다.
                         </c:when>
                         <c:otherwise>
-                            <img src=".${product.getPicture() }">
+                            <img src=".${product.getProductPicture() }">
                         </c:otherwise>
                     </c:choose>
                 </div>
                 <table>
                     <tr>
                         <th>상품명</th>
-                        <td>${product.getName() }</td>
+                        <td>${product.getProductTitle() }</td>
                     </tr>
                     <tr>
                         <th>가격</th>
-                        <td>${product.getPrice() }</td>
+                        <td>${product.getProductPrice() }</td>
                     </tr>
                     <tr>
                         <th>설명</th>
-                        <td><div style="height:220px; width:100%">${product.getDescription() }</div></td>
+                        <td><div style="height:220px; width:100%">${product.getProductDescription() }</div></td>
                     </tr>
                 </table>
 				<br>

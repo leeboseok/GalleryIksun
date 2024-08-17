@@ -21,7 +21,7 @@
 					</ul>
 					<div class="user tabcon">
 						<p class="caption"><span>일반 회원</span> 로그인 공간입니다.</p>
-						<form method="post" action="main.jsp">
+						<form method="post" action="login">
 							<input type="text" name="id" placeholder="아이디(필수)">
 							<input type="password" name="pw" placeholder="비밀번호(필수)">
 							<input type="submit" value="로그인">
@@ -29,7 +29,7 @@
 					</div>
 					<div class="admin tabcon">
 						<p class="caption"><span>관리자</span> 로그인 공간입니다.</p>
-						<form method="post" action="main.jsp">
+						<form method="post" action="login">
 							<input type="text" name="id" placeholder="아이디(필수)">
 							<input type="password" name="pw" placeholder="비밀번호(필수)">
 							<input type="submit" value="로그인">

@@ -1,0 +1,65 @@
+package controller;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
+
+import dao.MemberDAO;
+import dto.Member;
+
+@WebServlet("/signUp")
+public class signUp extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		System.out.println("signUp.doGet()실행확인");
+		RequestDispatcher dis=request.getRequestDispatcher("register.jsp");
+		dis.forward(request, response);
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+		request.setCharacterEncoding("utf-8");
+		String id=request.getParameter("id");
+		String pw=request.getParameter("pw");
+		String nm=request.getParameter("name");
+		String phone=request.getParameter("phone");
+		String email=request.getParameter("email");
+		String post=request.getParameter("post");
+		String address=request.getParameter("address");
+		String addressDetail=request.getParameter("addressDetail");
+		String bank=request.getParameter("bank");
+		String accountN=request.getParameter("accountNumber");
+		String accountH=request.getParameter("accountHandler");
+		String birth=request.getParameter("birth");
+		String userType=request.getParameter("userType");
+		
+		Member m=new Member();
+		m.setId(id);
+		m.setPw(pw);
+		m.setName(nm);
+		m.setPhone(phone);
+		m.setEmail(email);
+		m.setPost(post);
+		m.setAddress(address);
+		m.setAddressDetail(addressDetail);
+		m.setBank(bank);
+		m.setAccountNumber(accountN);
+		m.setAccountHandler(accountH);
+		m.setBirth(birth);
+		m.setUserType(userType);
+		
+		MemberDAO mDAO=MemberDAO.getInstance();
+		int result=mDAO.insertMember(m);
+		
+		HttpSession session=request.getSession();
+		if(result==1) {
+			session.setAttribute("id", m.getId());
+			request.setAttribute("message", "All GOOD");
+		}else if(result==-1) {
+			request.setAttribute("message", "회원가입에 실패하셨습니다");
+		}
+		RequestDispatcher dis=request.getRequestDispatcher("login");
+		dis.forward(request, response);
+	}
+}

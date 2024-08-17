@@ -2,7 +2,7 @@ package dto;
 
 //회원 정보
 public class Member{
-	private String num;
+	private int num;
 	private String name;
 	private String id;
 	private String pw;
@@ -18,10 +18,10 @@ public class Member{
 	private String userType;
 	private String createdAt;
 	private String status;
-	public String getNum() {
+	public int getNum() {
 		return num;
 	}
-	public void setNum(String num) {
+	public void setNum(int num) {
 		this.num = num;
 	}
 	public String getName() {

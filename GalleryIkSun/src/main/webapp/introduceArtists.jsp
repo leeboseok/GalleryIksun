@@ -247,8 +247,8 @@
                     </div>
                     <div class="bg" style="background-image: url(img/image_01.jpg);"> </div>
                 </div>
-            </li>
-           </ul>
+            </li> -->
+        </ul>
     </div><!-- .contents -->
 </div> <!-- #wrap -->
 

@@ -12,11 +12,15 @@
 			<form method="post" enctype="multipart/form-data" name="frm">
 				<table>
 					<tr>
-						<th>상품명</th>
-						<td><input type="text" name="name"></td>
+						<th>작품명</th>
+						<td><input type="text" name="title"></td>
 					</tr>
 					<tr>
-						<th>사진</th>
+						<th>작가명</th>
+						<td><input type="text" name="author"></td>
+					</tr>
+					<tr>
+						<th>작품 사진</th>
 						<td><input type="file" name="picture"></td>
 					</tr>
 					<tr>

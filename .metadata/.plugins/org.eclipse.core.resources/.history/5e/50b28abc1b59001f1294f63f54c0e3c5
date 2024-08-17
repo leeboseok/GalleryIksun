@@ -1,0 +1,47 @@
+package dao;
+
+import java.sql.*;
+
+public class BoardDAO {
+	private BoardDAO() {
+		
+	}
+	private static BoardDAO instance=new ProductDAO();
+	
+	public static BoardDAO getInstance() {
+		return instance;
+	}
+	
+	public Connection getConnection() throws Exception{
+		Connection conn=null;
+		String url="jdbc:mysql://127.0.0.1:3306/gallery_iksun";
+		String db_id="root";
+		String db_pw="iotiot";
+		
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		conn=DriverManager.getConnection(url, db_id, db_pw);
+		return conn;
+	}
+	
+	public static void close(Connection conn, Statement stmt, ResultSet rs) {
+		try {
+			rs.close();
+			stmt.close();
+			conn.close();
+		}catch(Exception e) {
+			System.out.println("연결 해제중 오류발생 : "+e);
+		}
+	}
+	public static void close(Connection conn, Statement stmt) {
+		try {
+			stmt.close();
+			conn.close();
+		}catch(Exception e) {
+			System.out.println("연결 해제중 오류발생 : "+e);
+		}
+	}
+	
+	public List<Board> selectAllBoard(){
+		List<Board> list=new ArrayList<Board>();
+	}
+}

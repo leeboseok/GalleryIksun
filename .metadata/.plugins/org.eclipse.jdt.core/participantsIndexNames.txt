@@ -1,3 +1,5 @@
 INDEX VERSION 1.134
+C:\20240813Gallery_Iksun\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2971721301.index
+\GalleryIkSun\src\main\java
 C:\20240813_Gallery_Iksun\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2971721301.index
 \GalleryIkSun\src\main\java

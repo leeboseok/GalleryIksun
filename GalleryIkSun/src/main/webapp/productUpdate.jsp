@@ -14,28 +14,32 @@
 			<h1>상품 수정</h1>
 			<form method="post" enctype="multipart/form-data" name="frm" action="productUpdate">
 				<input type="hidden" name="num" value="${product.getNum() }">
-				<input type="hidden" name="nonmakeImg" value="${product.getPicture() }">
+				<input type="hidden" name="nonmakeImg" value="${product.getProductPicture() }">
 				<table>
 					<tr>
 						<td>
 							<c:choose>
-								<c:when test="${product.getPicture()=='/files/null' }">
+								<c:when test="${product.getProductPicture()=='/files/null' }">
 									이미지가 없습니다.
 								</c:when>
 								<c:otherwise>
-									<img src=".${product.getPicture() }">
+									<img src=".${product.getProductPicture() }">
 								</c:otherwise>
 							</c:choose>
 						</td>
 						<td>
 							<table>
 								<tr>
-									<th>상품명</th>
-									<td><input type="text" name="name" value="${product.getName() }"></td>
+									<th>작품명</th>
+									<td><input type="text" name="name" value="${product.getProductTitle() }"></td>
+								</tr>
+								<tr>
+									<th>작가명</th>
+									<td><input type="text" name="author" value="${product.getProductAuthor() }"></td>
 								</tr>
 								<tr>
 									<th>가격</th>
-									<td><input type="text" name="price" value="${product.getPrice() }"></td>
+									<td><input type="text" name="price" value="${product.getProductPrice() }"></td>
 								</tr>
 								<tr>
 									<th>사진</th>
@@ -48,14 +52,14 @@
 									<th>장르</th>
 									<td>
 										<input type="radio" name="genre" value="동양화"
-											<c:if test="${product.getGenre()=='동양화' }">checked</c:if>>동양화
+											<c:if test="${product.getProductGenre()=='동양화' }">checked</c:if>>동양화
 										<input type="radio" name="genre" value="서양화"
-											<c:if test="${product.getGenre()=='서양화' }">checked</c:if>>서양화
+											<c:if test="${product.getProductGenre()=='서양화' }">checked</c:if>>서양화
 									</td>
 								</tr>
 								<tr>
 									<th>설명</th>
-									<td><textarea cols="90" rows="10" name="description">${products.getDescription() }</textarea></td>
+									<td><textarea cols="90" rows="10" name="description">${product.getProductDescription() }</textarea></td>
 								</tr>
 							</table>
 						</td>
@@ -63,7 +67,7 @@
 				</table>
 				<input type="submit" value="수정">
 				<input type="reset" value="다시작성">
-				<input type="button" value="목록" onclick="location.href='productsList'">
+				<input type="button" value="목록" onclick="location.href='productList'">
 			</form>
 		</div>
 		<script>

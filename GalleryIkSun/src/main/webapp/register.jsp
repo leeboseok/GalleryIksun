@@ -27,7 +27,12 @@
 	            <h2>개인정보입력(필수)</h2>
 	            <div>
 	                <div>이름:</div>
-	                <input type="text" name="nm" placeholder="이름">
+	                <input type="text" name="name" placeholder="이름">
+	            </div>
+	            
+	            <div>
+	                <div>생년월일 여섯자리:</div>
+	                <input type="text" name="birth" placeholder="ex)881231">
 	            </div>
 	            
 	            <div>
@@ -50,13 +55,8 @@
 	            </div>
 	            
 	            <div>
-	                <div>참고항목:</div>
-	                <input type="text" name="postscript" placeholder="참고항목">
-	            </div>
-	            
-	            <div>
 	                <div>상세주소:</div>
-	                <input type="text" name="address2" placeholder="상세주소">
+	                <input type="text" name="addressDetail" placeholder="상세주소">
 	            </div>
 	            <h2>추가정보(선택)</h2>
 	            <div>
@@ -80,20 +80,16 @@
 	            </div>
 	            <div>
 	                <div>계좌번호:</div>
-	                <input type="text" name="accountnumber" placeholder="계좌번호">
+	                <input type="text" name="accountNumber" placeholder="계좌번호">
 	            </div>
 	            <div>
 	                <div>예금주:</div>
-	                <input type="text" name="accountholder" placeholder="예금주">
-	            </div>
-	            <div>
-	                <div>생년월일:</div>
-	                <input type="text" name="birth" placeholder="생년월일(예시:830212)">
+	                <input type="text" name="accountHandler" placeholder="예금주">
 	            </div>
 	            <div>
 	            	<div>회원종류:</div>
-	            	<input type="radio" name="user_type" value="admin">관리자
-	            	<input type="radio" name="user_type" value="member">일반회원
+	            	<input type="radio" name="userType" value="admin">관리자
+	            	<input type="radio" name="userType" value="member">일반회원
 	            </div>
 	            <input type="submit" name="action" value="Cancel">
 	            <input type="submit" name="action" value="Sign up!">

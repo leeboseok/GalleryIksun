@@ -1,0 +1,30 @@
+package controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import com.google.gson.Gson;
+import dao.ProductDAO;
+import dto.Product;
+
+@WebServlet("/getProducts")
+public class getProducts extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ProductDAO dao = ProductDAO.getInstance();
+        List<Product> products = dao.getAllProducts(); // 모든 상품 정보를 가져오는 메서드 호출
+
+        response.setContentType("application/json");
+        PrintWriter out = response.getWriter();
+        Gson gson = new Gson();
+        String json = gson.toJson(products);
+        out.print(json);
+        out.flush();
+    }
+}

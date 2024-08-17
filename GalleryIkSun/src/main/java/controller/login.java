@@ -1,6 +1,7 @@
 package controller;
 
-import java.io.*;   
+import java.io.*; 
+    
 import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
@@ -18,28 +19,21 @@ public class login extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url="signIn.jsp";
+		
 		request.setCharacterEncoding("utf-8");
 		String id=request.getParameter("id");
 		String pw=request.getParameter("pw");
-		String userType=request.getParameter("userType");
 		
 		MemberDAO dao=MemberDAO.getInstance();
 		Member member=dao.getMember(id);
 		
-		if(member!=null&&member.getPw().equals(pw)&&member.getUserType().equals(userType)) {
+		if(member!=null && member.getPw().equals(pw) ) {
 			HttpSession session=request.getSession();
 			session.setAttribute("member", member);
-			
-			if("admin".equals(userType)) {
-				response.sendRedirect("index.jsp");
-				session.setAttribute("admin", userType);
-			}else {
-				response.sendRedirect("index.jsp");
-				session.setAttribute("member", member);
-			}
+			session.setAttribute("userType", member.getUserType());
+			response.sendRedirect("index.jsp");
 		}else {
-			response.sendRedirect(url);
+			response.sendRedirect("index.jsp");
 		}
 	}
 }

@@ -20,9 +20,10 @@ public class signUp extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		request.setCharacterEncoding("utf-8");
+		String nm=request.getParameter("name");
 		String id=request.getParameter("id");
 		String pw=request.getParameter("pw");
-		String nm=request.getParameter("nm");
+		String birth=request.getParameter("birth");
 		String phone=request.getParameter("phone");
 		String email=request.getParameter("email");
 		String post=request.getParameter("post");
@@ -31,7 +32,6 @@ public class signUp extends HttpServlet {
 		String bank=request.getParameter("bank");
 		String accountN=request.getParameter("accountNumber");
 		String accountH=request.getParameter("accountHandler");
-		String birth=request.getParameter("birth");
 		String userType=request.getParameter("userType");
 		
 		Member m=new Member();
@@ -59,7 +59,7 @@ public class signUp extends HttpServlet {
 		}else if(result==-1) {
 			request.setAttribute("message", "회원가입에 실패하셨습니다");
 		}
-		RequestDispatcher dis=request.getRequestDispatcher("login");
+		RequestDispatcher dis=request.getRequestDispatcher("signIn.jsp");
 		dis.forward(request, response);
 	}
 }
