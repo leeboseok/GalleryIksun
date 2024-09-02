@@ -1,6 +1,6 @@
 package dao;
 
-import java.sql.*; 
+import java.sql.*;  
 import java.util.*;
 
 import dto.Board;
@@ -68,11 +68,40 @@ public class BoardDAO {
 		}
 	}
 	
+	//게시판 글 조회 기능
+		public Board selectBoardByNum(String num) {
+			String sql="select * from board where num=?";
+			Board dto=null;
+			Connection conn=null;
+			PreparedStatement pstmt=null;
+			ResultSet rs=null;
+			try {
+				conn=getConnection();
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, num);
+				rs=pstmt.executeQuery();
+				if(rs.next()) {
+					dto=new Board();
+					dto.setNum(rs.getInt("num"));
+					dto.setBoardTitle(rs.getString("board_title"));
+					dto.setBoardContent(rs.getString("board_Content"));
+					dto.setBoardAuthor(rs.getString("board_author"));
+					dto.setBoardCreatedAt(rs.getString("board_created_at"));
+					dto.setBoardView(rs.getInt("board_view"));
+				}
+			}catch(Exception e) {
+				System.out.println("selectBoardByNum (num) 실행 중 오류 발생 : "+e);
+			}finally {
+				ProductDAO.close(conn, pstmt, rs);
+			}
+			return dto;
+		}
+	
 	//게시글 리스트
 	public List<Board> selectAllBoard(int currentPage, int recordsPerPage){
 		int start=currentPage*recordsPerPage-recordsPerPage;
 		List<Board> list=new ArrayList<Board>();
-		String sql="select * from board limit ?, ?";
+		String sql="select * from board order by num desc limit ?, ?";
 		Connection conn=null; PreparedStatement pstmt=null; ResultSet rs=null;
 		try {
 			conn=getConnection();

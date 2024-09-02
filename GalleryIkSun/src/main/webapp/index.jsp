@@ -25,6 +25,7 @@
                         	if(userType!=null&&userType.equals("admin")){
                         		%>
                         			<li><a href="productList">상품관리</a></li>
+                        			<li><a href="artistList">작가관리</a></li>
                         		<%
                         	}
                         %>
@@ -34,9 +35,9 @@
                                     <li><a href="introduceArtists.jsp">작가별 보기</a></li>
                                 </ul>
                             </li>
-                            <li><a href="shop.jsp">미술품 구매</a>
+                            <li><a href="shop">미술품 구매</a>
                                 <ul class="sub">
-                                    <li><a href="shop.jsp">원화 구입</a></li>
+                                    <li><a href="shop">원화 구입</a></li>
                                     <li><a href="wishlist.jsp">장바구니</a></li>
                                 </ul>
                             </li>

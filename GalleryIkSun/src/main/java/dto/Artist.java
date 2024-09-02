@@ -3,6 +3,7 @@ package dto;
 public class Artist {
 	private int num;
 	private String artistName;
+	private String artistPicture;
 	private String artistPhone;
 	private String artistEmail;
 	private String artistAddress;
@@ -18,6 +19,12 @@ public class Artist {
 	}
 	public void setArtistName(String artistName) {
 		this.artistName = artistName;
+	}
+	public String getArtistPicture() {
+		return artistPicture;
+	}
+	public void setArtistPicture(String artistPicture) {
+		this.artistPicture = artistPicture;
 	}
 	public String getArtistPhone() {
 		return artistPhone;
@@ -43,6 +50,5 @@ public class Artist {
 	public void setArtistCreatedAt(String artistCreatedAt) {
 		this.artistCreatedAt = artistCreatedAt;
 	}
-	
 	
 }

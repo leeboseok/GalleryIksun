@@ -63,13 +63,15 @@
                         <th>등록일</th>
                         <th>조회수</th>
                     </tr>
-					<c:forEach var="boardlist" items="${boardlist }">
+					<c:forEach var="board" items="${boardlist }">
 						<tr>
-							<td>${boardlist.num }</td>
-							<td>${boardlist.boardTitle }</td>
-							<td>${boardlist.boardAuthor }</td>
-							<td>${boardlist.boardCreatedAt }</td>
-							<td>${boardlist.boardView }</td>
+							<td>${board.num }</td>
+							<td>
+								<a href="boardView?num=${board.getNum() }">${board.boardTitle }</a>
+							</td>
+							<td>${board.boardAuthor }</td>
+							<td>${board.boardCreatedAt }</td>
+							<td>${board.boardView }</td>
 						  </tr>
 					</c:forEach>
 				</table>
