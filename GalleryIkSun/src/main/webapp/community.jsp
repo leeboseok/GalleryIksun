@@ -77,25 +77,28 @@
 				</table>
 			</div>
 			<div class="pagination">
-                <ul>
-                    <c:if test="${currentPage > 1}">
-                        <li><a href="boardList?currentPage=${currentPage - 1}&recordsPerPage=${recordsPerPage}">« 이전</a></li>
-                    </c:if>
-                    <c:forEach var="i" begin="1" end="${npage}">
-                        <c:choose>
-                            <c:when test="${i == currentPage}">
-                                <li><strong>${i}</strong></li>
-                            </c:when>
-                            <c:otherwise>
-                                <li><a href="boardList?currentPage=${i}&recordsPerPage=${recordsPerPage}">${i}</a></li>
-                            </c:otherwise>
-                        </c:choose>
-                    </c:forEach>
-                    <c:if test="${currentPage < npage}">
-                        <li><a href="boardList?currentPage=${currentPage + 1}&recordsPerPage=${recordsPerPage}">다음 »</a></li>
-                    </c:if>
-                </ul>
-            </div>
+		                <ul>
+		                    <c:if test="${currentPage > 1}">
+		                        <li><a href="boardList?currentPage=${currentPage - 1}&recordsPerPage=${recordsPerPage}">« 이전</a></li>
+		                    </c:if>
+		                    <c:forEach var="i" begin="1" end="${npage}">
+		                        <c:choose>
+		                            <c:when test="${i == currentPage}">
+		                                <li><strong>${i}</strong></li>
+		                            </c:when>
+		                            <c:otherwise>
+		                                <li><a href="boardList?currentPage=${i}&recordsPerPage=${recordsPerPage}">${i}</a></li>
+		                            </c:otherwise>
+		                        </c:choose>
+		                    </c:forEach>
+		                    <c:if test="${currentPage < npage}">
+		                        <li><a href="boardList?currentPage=${currentPage + 1}&recordsPerPage=${recordsPerPage}">다음 »</a></li>
+		                    </c:if>
+		                </ul>
+            		</div>
 		</div>
+        <footer>
+            <jsp:include page="footer.jsp"></jsp:include>
+        </footer>
 	</body>
 </html>
