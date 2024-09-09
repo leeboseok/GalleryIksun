@@ -122,6 +122,8 @@ form p{
     line-height: 2;
     display: flex;
     font-size: 20px;
+    align-items: center;
+    justify-content: center;
 }
 form> p> span{
     font-weight: bold;
