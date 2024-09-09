@@ -8,7 +8,7 @@
 		<head>
 		<meta charset="UTF-8">
 	<title>작가정보 삭제 - 관리자</title>
-    <link rel="stylesheet" href="css/productDelete.css">
+    <link rel="stylesheet" href="css/productsDelete.css">
     <script src="script/jquery-3.7.0.min.js"></script>
     <script src="script/header.js"></script>
 	</head>
