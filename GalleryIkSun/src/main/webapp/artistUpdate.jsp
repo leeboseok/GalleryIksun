@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>작가정보 수정</title>
-		<link rel="stylesheet" href="css/productUpdate.css">
+		<link rel="stylesheet" href="css/productsUpdate.css">
 	</head>
 	<body>
 		<div id="wrap">
